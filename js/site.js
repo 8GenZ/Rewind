@@ -1,14 +1,30 @@
-function displayMessage() {
-    let inputbox = document.getElementById('message');
+function getValues() {
+    let userString = document.getElementById('userString').value;
 
-    let message = inputbox.value;
+    let revString = reverseString(userString);
 
+    displayString(revString);
 
-    Swal.fire(
-        {
-            backdrop: false,
-            title: 'App Name',
-            text: message
-        }
-    )
+}
+
+function reverseString(input) {
+    let revString = '';
+
+    for(let index = input.length - 1; index >= 0; index = index - 1) {
+
+        let character = input[index];
+
+        revString = revString + character;
+    }
+
+    return revString;
+
+}
+
+function displayString(output) {
+    document.getElementById('results').textContent = output;
+
+    let alertBox = document.getElementById('alert');
+
+    alertBox.classList.remove('invisible');
 }

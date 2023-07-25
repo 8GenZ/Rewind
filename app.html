@@ -29,7 +29,7 @@
             <div class="container-fluid">
                 <a class="navbar-brand" href="/index.html">
                     <img src="/img/mark.svg" height="50" alt="developer logo">
-                    App Name</a>
+                    FLIP S</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -63,11 +63,34 @@
     </header>
 
     <main class="container py-3">
-        <h1>APP UI GOES HERE</h1>
-        <input class="form-control" id="message" placeholder="Enter a message" type="text" value="jonjon" />
-        <button class="btn btn-primary my-3" id="btnSubmit" type="button">
-            Display Message
-        </button>
+        <div class="row row-cols-1 row-cols-md-2">
+            <div class="col">
+                <h1 class="display-5 fw-bold">Flip S</h1>
+                <p class=" lead">FLIP S is an app challenge which will use javascript loops to reverse and return any
+                    string inputted by the user.</p>
+                <h2 class="border-bottom border-dark mb-3">Instructions</h2>
+                <p>Insert any string of text into the text box. Then press FLIP IT! to see it flipped!</p>
+            </div>
+            <div class="col">
+                <h5 class=" display-6 border-bottom mb-3 border-dark">Enter a string to reverse</h5>
+                <form action="#" class="row g-3">
+                    <div class="col-12">
+                        <input class="form-control" placeholder="Enter a String" aria-label="Enter a string"
+                            name="userString" id="userString" type="text" />
+                    </div>
+                    <div class="col-12 text-end">
+                        <button class="btn btn-primary" type="button" id="btnSubmit">
+                            FLIP IT!
+                        </button>
+                    </div>
+                </form>
+                <div class="alert alert-danger mt-4 fade show invisible" role="alert" id="alert">
+                    <h4>Well Done</h4>
+                    <hr />
+                    Your string reversed is: <span class="fw-bold" id="results"></span>
+                </div>
+            </div>
+        </div>
     </main>
 
     <footer class="footer container-fluid py-3">
@@ -76,11 +99,13 @@
                 <div class="col text-lg-start">
                     &copy; 2023 Jonathan Chavez
                 </div>
-                <div class="footerLogoText ms-5">
-                    Jonathan Chavez
-                    <span>
-                        <img src="/img/mark.svg" alt="Jonathan Chavez dev Logo" class="mainLogo" />
-                    </span>
+                <div class="col">
+                    <div class="footerLogoText ms-5">
+                        Jonathan Chavez
+                        <span>
+                            <img src="/img/mark.svg" alt="Jonathan Chavez dev Logo" class="mainLogo" />
+                        </span>
+                    </div>
                 </div>
                 <div class="col text-lg-end">
                     <a href="#"><i class="socialIcons bi bi-linkedin"></i> </a>
@@ -105,7 +130,7 @@
     <script src="/js/site.js"></script>
 
     <script>
-        document.getElementById('btnSubmit').addEventListener('click', displayMessage);
+        document.getElementById('btnSubmit').addEventListener('click', getValues);
     </script>
 </body>
 

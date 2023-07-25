@@ -69,27 +69,77 @@
             <div class="col-12 col-lg-8">
                 <pre class="line-numbers">
                     <code class="language-js">
-                        function displayMessage() {
-                            let inputbox = document.getElementById('message');
+                        function getValues() {
+                            let userString = document.getElementById('userString').value;
                         
-                            let message = inputbox.value;
+                            let revString = reverseString(userString);
                         
+                            displayString(revString);
                         
-                            Swal.fire(
-                                {
-                                    backdrop: false,
-                                    title: 'App Name',
-                                    text: message
-                                }
-                            )
+                        }
+                        
+                        function reverseString(input) {
+                            let revString = '';
+                        
+                            for(let index = input.length - 1; index >= 0; index = index - 1) {
+                        
+                                let character = input[index];
+                        
+                                revString = revString + character;
+                            }
+                        
+                            return revString;
+                        
+                        }
+                        
+                        function displayString(output) {
+                            document.getElementById('results').textContent = output;
+                        
+                            let alertBox = document.getElementById('alert');
+                        
+                            alertBox.classList.remove('invisible');
+                        }  )
                         }
                     </code>
                 </pre>
             </div>
             <div class="col-12 col-lg-4">
-                <p>The Code is structured in one funtion</p>
-                <h5>displayMessage</h5>
-                <p>Shows a Sweetalert with the value of the <code>message</code> variable
+                <p>The Code is structured using 3 funtions.</p>
+                <h5>getValues</h5>
+                <p>This is the function that gathers the initial input values and the output values and gives those
+                    properties to the corresponding functions.
+                    Creates a variable with the name of userString. This variable contains the properties of the input
+                    by
+                    using document.getElementById('userString').value.
+                    Then a new variable called revString is created which is assigned the properties of the
+                    reverseString function. These properties will then be used as the arguemnt for the displayString
+                    function as declared last in the function.
+                </p>
+                <h5 class="gy-3">reverseString</h5>
+                <p>This is the function that reverses the input and returns the finished results.
+                    First the name input is assigned as the parameter for the argument first initialized in the
+                    getValues Function which contains the original input as a string of text. Then a new varaiable
+                    called revString is declared to
+                    store our reversed input. Because a string is considerd an array, then a for loop can be used to
+                    cycle through the items in that array.
+                    In this for loop we declare a new variable called index which will be used to cycle through the
+                    items starting from the last value: for(let index = input.length - 1; index >= 0; index = index -
+                    1).
+                    The loop extracts each item from the array and assigns it to a new variable called character. It
+                    then
+                    adds the characters to the empty varaiable revString. Then using return revString we return the
+                    final results of the for loop to the displayString function located in the getValues function.
+                </p>
+                <h5 class="gy-3">
+                    displayString
+                </h5>
+                <p>This is the function that takes the finished result of the reverseString function and displays it onto the page.
+                    First the name output is assigned as the parameter for the argument that was assigned to the function the the 
+                    getValues function. Then using document.getElementById('results').textContent = output; we are able to assign 
+                    that parameter to the content within the html element with the id of results which in this case is the span tag 
+                    inside an alert tag. Then we declare a new variable with let alertBox = document.getElementById('alert'); which assigns the properties 
+                    of the alert tag in our html, allowing us to modify its properties. Then using alertBox.classList.remove('invisible'); we are able to remove 
+                    the invisible class which prevented the alert from being seen on the page. 
                 </p>
             </div>
         </div>
@@ -101,11 +151,13 @@
                 <div class="col text-lg-start">
                     &copy; 2023 Jonathan Chavez
                 </div>
-                <div class="footerLogoText ms-5">
-                    Jonathan Chavez
-                    <span>
-                        <img src="/img/mark.svg" alt="Jonathan Chavez dev Logo" class="mainLogo" />
-                    </span>
+                <div class="col">
+                    <div class="footerLogoText ms-5">
+                        Jonathan Chavez
+                        <span>
+                            <img src="/img/mark.svg" alt="Jonathan Chavez dev Logo" class="mainLogo" />
+                        </span>
+                    </div>
                 </div>
                 <div class="col text-lg-end">
                     <a href="#"><i class="socialIcons bi bi-linkedin"></i> </a>
