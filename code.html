@@ -106,41 +106,22 @@
             <div class="col-12 col-lg-4">
                 <p>The Code is structured using 3 funtions.</p>
                 <h5>getValues</h5>
-                <p>This is the function that gathers the initial input values and the output values and gives those
-                    properties to the corresponding functions.
-                    Creates a variable with the name of userString. This variable contains the properties of the input
-                    by
-                    using document.getElementById('userString').value.
-                    Then a new variable called revString is created which is assigned the properties of the
-                    reverseString function. These properties will then be used as the arguemnt for the displayString
-                    function as declared last in the function.
+                <p>This function collects the input string, assigns it to the userString variable, and then calls the
+                    reverseString function with userString as an argument. It finally passes the result to the
+                    displayString function for rendering on the page.
                 </p>
                 <h5 class="gy-3">reverseString</h5>
-                <p>This is the function that reverses the input and returns the finished results.
-                    First the name input is assigned as the parameter for the argument first initialized in the
-                    getValues Function which contains the original input as a string of text. Then a new varaiable
-                    called revString is declared to
-                    store our reversed input. Because a string is considerd an array, then a for loop can be used to
-                    cycle through the items in that array.
-                    In this for loop we declare a new variable called index which will be used to cycle through the
-                    items starting from the last value: for(let index = input.length - 1; index >= 0; index = index -
-                    1).
-                    The loop extracts each item from the array and assigns it to a new variable called character. It
-                    then
-                    adds the characters to the empty varaiable revString. Then using return revString we return the
-                    final results of the for loop to the displayString function located in the getValues function.
+                <p>This function reverses the characters in the input string and returns the reversed string. It uses a
+                    decrementing for loop to iterate through the characters in reverse order and builds the revString
+                    variable
+                    character by character.
                 </p>
                 <h5 class="gy-3">
                     displayString
                 </h5>
-                <p>This is the function that takes the finished result of the reverseString function and displays it onto the page.
-                    First the name output is assigned as the parameter for the argument that was assigned to the function the the 
-                    getValues function. Then using document.getElementById('results').textContent = output; we are able to assign 
-                    that parameter to the content within the html element with the id of results which in this case is the span tag 
-                    inside an alert tag. Then we declare a new variable with let alertBox = document.getElementById('alert'); which assigns the properties 
-                    of the alert tag in our html, allowing us to modify its properties. Then using alertBox.classList.remove('invisible'); we are able to remove 
-                    the invisible class which prevented the alert from being seen on the page. 
-                </p>
+                <p>This function takes the result (which is the reversed string) and updates an HTML element with the id
+                    'results' to display it by removing the alert box class 'invisible' class from
+                    it and making it visible.
             </div>
         </div>
     </main>
